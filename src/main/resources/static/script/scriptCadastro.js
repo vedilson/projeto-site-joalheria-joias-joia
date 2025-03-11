@@ -7,20 +7,21 @@ document.getElementById("clienteForm").addEventListener("submit", async function
 	const telefone = document.getElementById("telefone").value;
 	const dataNascimento = document.getElementById("dataNascimento").value;
 
-
+	console.log("Data de Nascimento:", dataNascimento);
 	try {
 		const response = await fetch("http://localhost:8080/cadastrocliente", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ nomeCliente, cpf, email, telefone, dataNascimento }),
+			body: JSON.stringify({ nomeCliente, cpf, email, telefone, dt_Nascimento: dataNascimento }),
 		});
 
 		if (!response.ok) {
 			throw new Error("Erro ao cadastrar cliente");
 		}
+		else {
+			window.location.href = "cadastroendereco.html";
+		}
 
-		alert("Cliente cadastrado com sucesso!");
-		window.location.href = "cadastroendereco.html";
 	} catch (error) {
 		alert(error.message);
 	}

@@ -2,6 +2,8 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +33,7 @@ public class Cliente {
 	private String telefone;
 	
 	@Column(name = "dt_nascimento", unique = false)
+	@DateTimeFormat(pattern = "YYYY-MM-DD")
 	private LocalDate dataNascimento;
 
 	// Construtores
