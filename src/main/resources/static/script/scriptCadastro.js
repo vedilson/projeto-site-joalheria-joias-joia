@@ -7,7 +7,6 @@ document.getElementById("clienteForm").addEventListener("submit", async function
 	const telefone = document.getElementById("telefone").value;
 	const dataNascimento = document.getElementById("dataNascimento").value;
 
-	console.log("Data de Nascimento:", dataNascimento);
 	try {
 		const response = await fetch("http://localhost:8080/cadastrocliente", {
 			method: "POST",
