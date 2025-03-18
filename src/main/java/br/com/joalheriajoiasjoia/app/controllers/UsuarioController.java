@@ -12,39 +12,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.joalheriajoiasjoia.app.entities.Cliente;
-import br.com.joalheriajoiasjoia.app.services.ClienteService;
+import br.com.joalheriajoiasjoia.app.entities.Usuario;
+import br.com.joalheriajoiasjoia.app.services.UsuarioService;
 
 @RestController
 @RequestMapping("/cadastrocliente")
-public class ClienteController {
+public class UsuarioController {
 
 	@Autowired
-	private ClienteService clienteService;
+	private UsuarioService usuarioService;
 
 	@PostMapping
-	public Cliente createCliente(@RequestBody Cliente cliente) {
-		return clienteService.saveCliente(cliente);
+	public Usuario createCliente(@RequestBody Usuario usuario) {
+		return usuarioService.saveUsuario(usuario);
 	}
 
 	@GetMapping
-	public List<Cliente> getAllClientes() {
-		return clienteService.getAllClientes();
+	public List<Usuario> getAllUsuario() {
+		return usuarioService.getAllUsuarios();
 	}
 
 	@GetMapping("/{id}")
-	public Cliente getCliente(@PathVariable Long id) {
-		return clienteService.getClienteById(id);
+	public Usuario getUsuario(@PathVariable Long id) {
+		return usuarioService.getUsuarioById(id);
 	}
 
 	@PutMapping
-	public Cliente editCliente(@RequestBody Cliente cliente) {
-		return clienteService.saveCliente(cliente);
+	public Usuario editUsuario(@RequestBody Usuario usuario) {
+		return usuarioService.saveUsuario(usuario);
 	}
 
 	@DeleteMapping("/{id}")
 	public void deleteCliente(@PathVariable Long id) {
-		clienteService.deleteCliente(id);
+		usuarioService.deleteUsuario(id);
 	}
 
 }
