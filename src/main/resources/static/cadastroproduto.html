@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Joalheria Joias Jóia</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <a href="cadastrocliente.html">Cadastro</a>
+            <a href="#">Login</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>Cadastro de Produto</h2>
+        <form id="produtoForm">
+            <label for="nomeProduto">Nome:</label>
+            <input type="text" id="nomeProduto" name="nomeProduto" required>
+            
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" required>
+            
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" required>
+            
+            <label for="imgUrl">URL da Imagem:</label>
+            <input type="text" id="imgUrl" name="imgUrl" required>
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Joalheria Joias & Jóias. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="./script/scriptCadastroProduto.js"></script>
+</body>
+</html>

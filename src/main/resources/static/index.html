@@ -3,68 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Joalheria</title>
+    <title>Home - Joalheria Joias Jóia</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <!-- Cabeçalho -->
     <header>
-        <!-- Logo da empresa (à esquerda) -->
+        <!-- Logo da empresa -->
         <div class="logo">
-            <h1>Joalheria Joias Jóia</h1>
+            <a href="index.html">
+                <h1>Joalheria Joias Jóia</h1>
+            </a>
         </div>
 
-        <!-- Menu de navegação (centralizado) -->
-        <nav>
+        <!-- Menu de navegação -->
+        <nav aria-label="Navegação principal">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
 
-        <!-- Links de Cadastro e Login (à direita) -->
+        <!-- Links de Cadastro e Login -->
         <div class="auth-links">
-            <a href="./cadastrocliente.html">Cadastro</a>
-            <a href="#">Login</a>
+            <a href="cadastroproduto.html">Cadastro Produto</a>
+            <a href="cadastrocliente.html">Cadastro Cliente</a>
+            <a href="login.html">Login</a>
         </div>
     </header>
 
-    <!-- Banner principal -->
-    <section class="banner">
-        <h2>Bem-vindo à nossa Joalheria!</h2>
-        <p>Encontre as joias mais exclusivas para o seu estilo.</p>
-        <a href="#" class="btn">Veja nossas Joias</a>
-    </section>
+    <main>
+        <!-- Banner principal -->
+        <section class="banner">
+            <h2>Bem-vindo à nossa Joalheria!</h2>
+            <p>Encontre as joias mais exclusivas para o seu estilo.</p>
+            <a href="produtos.html" class="btn btn-primary">Veja nossas Joias</a>
+        </section>
 
-    <!-- Seção de Destaques -->
-    <section class="destaques">
-        <h2>Joias em Destaque</h2>
-        <div class="produtos">
-            <div class="produto">
-                <img src="https://lojavivara.vtexassets.com/arquivos/ids/842820-1600-1600/Pingente-Chains-Color-em-Ouro-Amarelo-18k-com-Citrino-e-Diamantes-85556_1_set.jpg?v=638470894910030000" alt="Joia 1">
-                <h3>Colar de Ouro</h3>
-                <p>R$ 1.200,00</p>
-            </div>
-            <div class="produto">
-                <img src="https://lojavivara.vtexassets.com/arquivos/ids/842820-1600-1600/Pingente-Chains-Color-em-Ouro-Amarelo-18k-com-Citrino-e-Diamantes-85556_1_set.jpg?v=638470894910030000" alt="Joia 2">
-                <h3>Anel de Diamante</h3>
-                <p>R$ 2.500,00</p>
-            </div>
-            <div class="produto">
-                <img src="https://lojavivara.vtexassets.com/arquivos/ids/842820-1600-1600/Pingente-Chains-Color-em-Ouro-Amarelo-18k-com-Citrino-e-Diamantes-85556_1_set.jpg?v=638470894910030000" alt="Joia 3">
-                <h3>Pulseira de Prata</h3>
-                <p>R$ 800,00</p>
-            </div>
-        </div>
-    </section>
+        <!-- Seção de Destaques -->
+		<section class="destaques">
+		    <h2>Joias em Destaque</h2>
+		    <div class="produtos">
+		        <!-- Os produtos serão carregados dinamicamente aqui pelo JavaScript -->
+		    </div>
+		</section>
+    </main>
 
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2025 Joalheria Joias & Jóias. Todos os direitos reservados.</p>
     </footer>
+	<script src="./script/scriptHomePage.js"></script>
 
 </body>
 </html>

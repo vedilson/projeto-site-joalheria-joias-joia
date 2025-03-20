@@ -114,7 +114,7 @@ button:hover {
 /* Banner principal */
 .banner {
     text-align: center;
-    background: url("./images/banner.jpg") no-repeat center/cover;
+    background: url("../images/banner.jpg") no-repeat center/cover;
     color: white;
     padding: 100px 20px;
     flex: 1; /* Garante que o banner ocupe o espaço disponível */
