@@ -6,12 +6,23 @@ document.getElementById("clienteForm").addEventListener("submit", async function
 	const email = document.getElementById("email").value;
 	const telefone = document.getElementById("telefone").value;
 	const dataNascimento = document.getElementById("dataNascimento").value;
+	const senha = document.getElementById("senha").value;
 
 	try {
 		const response = await fetch("http://localhost:8080/cadastrocliente", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ nomeCliente, cpf, email, telefone, dt_Nascimento: dataNascimento }),
+			body: JSON.stringify({
+				nomeCliente,
+				cpf,
+				email,
+				telefone,
+				dt_Nascimento: dataNascimento,
+				senha,
+				tipoUsuario: {
+					id: 1
+				}
+			}),
 		});
 
 		if (!response.ok) {
@@ -25,8 +36,3 @@ document.getElementById("clienteForm").addEventListener("submit", async function
 		alert(error.message);
 	}
 });
-
-
-
-
-

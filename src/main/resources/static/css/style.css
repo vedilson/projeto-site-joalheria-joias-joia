@@ -97,6 +97,22 @@ input {
     border-radius: 5px;
 }
 
+select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+	height: 50px;
+	padding: 10px;
+}
+
 /* Botões */
 button {
     margin-top: 15px;

@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,21 +29,31 @@ public class Produto {
 
 	@Column(name = "img_produto", nullable = false)
 	private String imgUrl;
-
-	// Construtores
+	
+	@ManyToOne
+	@JoinColumn(name = "categoria_produto", nullable = false)
+	private CategoriaProduto categoriaProduto;
+	
+	@ManyToOne
+	@JoinColumn(name = "tipo_produto", nullable = false)
+	private TipoProduto tipoProduto;
+	
+	//Construtores
 	public Produto() {
-
 	}
-
-	public Produto(long id, String nomeProduto, String descricao, double preco, String imgUrl) {
+	
+	public Produto(long id, String nomeProduto, String descricao, double preco, String imgUrl,
+			CategoriaProduto categoriaProduto, TipoProduto tipoProduto) {
 		this.id = id;
 		this.nomeProduto = nomeProduto;
 		this.descricao = descricao;
 		this.preco = preco;
 		this.imgUrl = imgUrl;
+		this.categoriaProduto = categoriaProduto;
+		this.tipoProduto = tipoProduto;
 	}
-
-	// Getters e Setters
+	
+	//Getters e Setters
 	public long getId() {
 		return id;
 	}
@@ -81,4 +93,21 @@ public class Produto {
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
+
+	public CategoriaProduto getCategoriaProduto() {
+		return categoriaProduto;
+	}
+
+	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
+		this.categoriaProduto = categoriaProduto;
+	}
+
+	public TipoProduto getTipoProduto() {
+		return tipoProduto;
+	}
+
+	public void setTipoProduto(TipoProduto tipoProduto) {
+		this.tipoProduto = tipoProduto;
+	}
+	
 }

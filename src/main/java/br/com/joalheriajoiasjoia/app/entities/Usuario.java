@@ -9,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,13 +41,16 @@ public class Usuario {
 	@Column(name = "senha", nullable = false, unique = true, length = 50)
 	private String senha;
 
+	@ManyToOne
+	@JoinColumn(name = "tipo_usuario", nullable = false)
+	private TipoUsuario tipoUsuario;
+
 	// Construtores
 	public Usuario() {
-
 	}
 
 	public Usuario(Long idUsuario, String nomeUsuario, String cpf, String telefone, LocalDate dataNascimento,
-			String email, String senha) {
+			String email, String senha, TipoUsuario tipoUsuario) {
 		this.idUsuario = idUsuario;
 		this.nomeUsuario = nomeUsuario;
 		this.cpf = cpf;
@@ -53,23 +58,24 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 		this.email = email;
 		this.senha = senha;
+		this.tipoUsuario = tipoUsuario;
 	}
 
-	// Getters e setters
-	public Long getIdCliente() {
+	// Getters e Setters
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdCliente(Long idCliente) {
-		this.idUsuario = idCliente;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
-	public String getNomeCliente() {
+	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
 
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeUsuario = nomeCliente;
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 
 	public String getCpf() {
@@ -110,5 +116,13 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 }
