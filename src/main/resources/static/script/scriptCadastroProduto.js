@@ -17,8 +17,12 @@ document.getElementById("produtoForm").addEventListener("submit", async function
                 descricao,
                 preco,
                 imgUrl,
-                categoriaProduto: { id: categoriaProduto }, // Envia um objeto com o ID
-                tipoProduto: { id: tipoProduto } // Envia um objeto com o ID
+                categoriaProduto: { 
+					id: categoriaProduto 
+				}, 
+                tipoProduto: { 
+					id: tipoProduto 
+				} 
             }),
         });
 
